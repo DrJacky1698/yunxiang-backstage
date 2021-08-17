@@ -1,6 +1,8 @@
 <template>
+<div>
+
   <el-card class="home">
-<el-table
+    <el-table
     :data="tableData"
     border
     style="width: 100%">
@@ -28,6 +30,7 @@
   />
   <edit-dialog v-if="myrow" :rowdata="myrow" :visible.sync="editDialogVisible"/>
   </el-card>
+</div>
 </template>
 
 <script>

@@ -5,14 +5,16 @@
       <navbar />
     </el-aside>
     <el-container>
-      <el-header height="40">
+      <el-header style="height: 110px;">
         <topbar />
-
       </el-header>
-      <el-main><router-view /></el-main>
+      <el-main>
+        <router-view />
+      </el-main>
     </el-container>
   </el-container>
 </template>
+
 <script>
 import { Navbar, Topbar } from "./components";
 
@@ -43,21 +45,10 @@ body,
   height: 100%;
 }
 .el-header {
-  height: 40px;
-  line-height: 40px;
+  line-height: 50px;
   border-bottom: #304156 solid 1px;
 }
-.el-header .el-breadcrumb {
-  line-height: 40px;
-}
-.el-header .topr {
-  width: 400px;
-  height: 40px;
-  line-height: 40px;
-  text-align: right;
-  font-size: 14px;
-  float: right;
-}
+
 .el-aside {
   background-color: #304156;
 }
@@ -83,6 +74,7 @@ body,
 
 .el-main {
   background-color: #eef0f3;
+  padding: 0;
 }
 
   .el-dropdown-link {

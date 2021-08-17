@@ -1,4 +1,6 @@
 <template>
+<div>
+
   <el-card class="settings">
     <h2>系统参数设置</h2>
 
@@ -34,6 +36,7 @@
       </div>
     </el-form>
   </el-card>
+</div>
 </template>
 
 <script>

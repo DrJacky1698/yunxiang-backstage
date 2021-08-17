@@ -1,7 +1,10 @@
 <template>
-  <el-card class="settings">
-    <h2>系统设置</h2>
-  </el-card>
+  <div>
+
+    <el-card class="settings">
+      <h2>系统设置</h2>
+    </el-card>
+  </div>
 </template>
 
 <script>

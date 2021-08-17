@@ -3,10 +3,11 @@ import VueRouter from 'vue-router'
 
 import Layout from '@/layout'
 import Home from '../views/Home.vue'
+import Topsubmenu from '@/layout/components/Topsubmenu.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
     path: '/login',
     component: () => import('@/views/session/login'),
@@ -21,25 +22,70 @@ const routes = [
   path: '/',
   component: Layout,
   children: [{
-      path: '',
+      path: '/home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/users',
-      name: 'Users',
-      component: () => import('@/views/Users.vue')
+      path: '/pagemaking',
+      component: Topsubmenu,
+      children:[{
+          path: '/pagemaking/pagemaking',
+          name: 'Pagemaking',
+          component: () => import('@/views/page'),
+        }
+      ]
     },
     {
-      path: '/profile',
-      name: 'Profile',
-      component: () => import('@/views/profile/index.vue')
+      path: '/membermanage',
+      component: Topsubmenu,
+      children:[{
+          path: '/membermanage/basicinfo',
+          name: 'Basicinfo',
+          component: () => import('@/views/member/basicinfo.vue'),
+        }
+      ]
+    },
+    {
+      path: '/commodymanage',
+      component: Topsubmenu,
+      children:[{
+          path: '/commodymanage/newcommody',
+          name: 'Newcommody',
+          component: () => import('@/views/commody/newcommody.vue'),
+        },
+        {
+          path: '/commodymanage/commodydetail',
+          name: 'commodydetail',
+          component: () => import('@/views/commody/commodydetail.vue'),
+        }
+      ]
+    },
+    {
+      path: '/wearingmanage',
+      component: Topsubmenu,
+      children:[{
+          path: '/wearingmanage/newwearing',
+          name: 'Newwearing',
+          component: () => import('@/views/wearing/newwearing.vue'),
+        }
+      ]
+    },
+    {
+      path: '/articlemanage',
+      component: Topsubmenu,
+      children:[{
+          path: '/articlemanage/newarticle',
+          name: 'Newarticle',
+          component: () => import('@/views/article/newarticle.vue'),
+        }
+      ]
     },
     {
       path: '/settings',
       name: 'Settings',
-      component: () => import('@/views/settings/index.vue')
-    }
+      component: () => import('@/views/settings')
+    },
   ]
 }]
 

@@ -1,7 +1,11 @@
 <template>
-  <el-card class="home">
-  Home
-  </el-card>
+  <div>
+
+    <el-card>
+      Home
+    </el-card>
+    
+  </div>
 
 </template>
 

@@ -3,9 +3,9 @@
     <el-row class="topbar" type="flex" justify="space-between">
 
       <el-col :span="10" class="topl">
-        <i class="el-icon-s-fold" style="padding-right:10px;margin-right:10px;border-right:1px solid black"></i>
-        <i class="el-icon-arrow-left"></i>
-        会员管理
+        <i class="el-icon-s-fold" style="padding-right:10px;margin-right:10px;border-right:1px solid black" @click="handleSidebar"></i>
+        <i class="el-icon-arrow-left" @click="back"></i>
+        {{menudata[this.$route.name]}}
       </el-col>
 
       <el-col :span="3" class="topr">
@@ -22,46 +22,46 @@
 
     </el-row>
 
-    <el-row>
-      <el-menu class="submenu" mode="horizontal" router>
-        <el-menu-item v-for="(item,index) in location" :key="index" :index="item.path">{{item.name}}</el-menu-item>
-      </el-menu>
-    </el-row>
    
   </div>
 </template>
 
 <script>
 import { removeToken } from "@/utils/auth";
-import Topsubmenu from "./Topsubmenu.vue"
 import store from "@/store";
-import {routes} from '@/router'
+import {menudata} from '@/menudata/menudata.js'
+
 
 export default {
   components:{
-    Topsubmenu
+  },
+
+  model: {
+    prop: 'OpenSidebar',
+    event: 'click'
+  },
+
+  props: {
+    OpenSidebar: Boolean
   },
 
   data() {
     return {
       activeIndex: "1",
-      routes:routes
+      menudata:menudata
     };
   },
 
-  computed:{
-    location:function(){
-      let i = []
-      this.routes[2].children.forEach(element => {
-        if (element.path === this.$route.path){
-          i = element.children
-        }        
-      })
-      return i
-    }
-  },
 
   methods: {
+    handleSidebar(){
+      this.$emit('click',!this.OpenSidebar)
+    },
+
+    back(){
+      this.$router.go(-1)
+    },
+
     handleCommand(command){
       if(command === "logout"){
         removeToken();
@@ -79,15 +79,8 @@ export default {
       return store.getters.fullname;
     },
 
-    print(){
-      console.log(this.routes)
-      console.log(this.routes[2].children);
-    }
   },
 
-  created(){
-    this.print()
-  }
 };
 </script>
 

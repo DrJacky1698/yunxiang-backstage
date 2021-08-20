@@ -1,15 +1,19 @@
 <template>
   <div>
+    <topsubmenu></topsubmenu>
 
-    <el-card class="settings">
-      <h2>系统设置</h2>
-    </el-card>
   </div>
 </template>
 
 <script>
+import Topsubmenu from '@/layout/Topsubmenu.vue'
+
 export default {
   name: "Settings",
+
+  components:{
+    Topsubmenu
+  },
 
   data() {
     return {

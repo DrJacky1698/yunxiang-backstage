@@ -1,0 +1,17 @@
+export const menudata={
+  'Home':'首页',
+  'Pagemaking':'商城制作页',
+  'Membermanage':'会员管理页',
+  'Basicinfo':'基本资料',
+  'Commodymanage':'商品管理页',
+  'Newcommody':'新增商品',
+  'Commodydetail':'商品详情制作',
+  'Wearingmanage':'穿法管理页',
+  'Newwearing':'新增穿法',
+  'Articlemanage':'文章管理页',
+  'Newarticle':'新增文章',
+  'Settings':'系统设置',
+  'Profile':'用户设置',
+  'Newuser':'新增用户',
+  'Permission':'权限设置',
+}

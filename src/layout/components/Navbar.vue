@@ -10,27 +10,27 @@
       <i class="el-icon-s-home"></i>
       <span slot="title">首页</span>
     </el-menu-item>
-    <el-menu-item index="Pagemaking">
+    <el-menu-item index="/pagemaking">
       <i class="el-icon-s-tools"></i>
       <span slot="title">商城制作页</span>
     </el-menu-item>
-    <el-menu-item index="/membermanage">
+    <el-menu-item index="/membermanage/membermanage">
       <i class="el-icon-s-tools"></i>
       <span slot="title">会员管理页</span>
     </el-menu-item>
-    <el-menu-item index="/commodymanage">
+    <el-menu-item index="/commodymanage/commodymanage">
       <i class="el-icon-s-tools"></i>
       <span slot="title">商品管理页</span>
     </el-menu-item>
-    <el-menu-item index="/wearingmanage">
+    <el-menu-item index="/wearingmanage/wearingmanage">
       <i class="el-icon-s-tools"></i>
       <span slot="title">穿法管理页</span>
     </el-menu-item>
-    <el-menu-item index="/articlemanage">
+    <el-menu-item index="/articlemanage/articlemanage">
       <i class="el-icon-s-tools"></i>
       <span slot="title">文章管理页</span>
     </el-menu-item>
-    <el-menu-item index="/settings">
+    <el-menu-item index="/settings/settings">
       <i class="el-icon-s-tools"></i>
       <span slot="title">系统设置页</span>
     </el-menu-item>

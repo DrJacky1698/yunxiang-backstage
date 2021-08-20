@@ -1,3 +1,15 @@
 <template>
-  <div>基本资料</div>
+  <div>
+    <topsubmenu></topsubmenu>
+  </div>
 </template>
+
+<script>
+import Topsubmenu from '@/layout/Topsubmenu.vue'
+export default {
+  components:{
+    Topsubmenu
+  }
+  
+}
+</script>

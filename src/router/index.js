@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Layout from '@/layout'
+import SideMenu from '@/layout/SideMenu.vue'
 import Home from '../views/Home.vue'
-import Topsubmenu from '@/layout/components/Topsubmenu.vue'
 
 Vue.use(VueRouter)
 
@@ -19,8 +18,8 @@ export const routes = [
     hidden: true
   },
   {
-  path: '/',
-  component: Layout,
+  path: '',
+  component: SideMenu,
   children: [{
       path: '/home',
       name: 'Home',
@@ -28,69 +27,79 @@ export const routes = [
     },
     {
       path: '/pagemaking',
-      component: Topsubmenu,
-      children:[{
-          path: '/pagemaking/pagemaking',
-          name: 'Pagemaking',
-          component: () => import('@/views/page'),
-        }
-      ]
+      name: 'Pagemaking',
+      component: () => import('@/views/page'),
     },
     {
-      path: '/membermanage',
-      component: Topsubmenu,
-      children:[{
-          path: '/membermanage/basicinfo',
-          name: 'Basicinfo',
-          component: () => import('@/views/member/basicinfo.vue'),
-        }
-      ]
+      path: '/membermanage/membermanage',
+      name: 'Membermanage',
+      component: () => import('@/views/member/membermanage.vue'),
     },
     {
-      path: '/commodymanage',
-      component: Topsubmenu,
-      children:[{
-          path: '/commodymanage/newcommody',
-          name: 'Newcommody',
-          component: () => import('@/views/commody/newcommody.vue'),
-        },
-        {
-          path: '/commodymanage/commodydetail',
-          name: 'commodydetail',
-          component: () => import('@/views/commody/commodydetail.vue'),
-        }
-      ]
+      path: '/membermanage/basicinfo',
+      name: 'Basicinfo',
+      component: () => import('@/views/member/basicinfo.vue'),
     },
     {
-      path: '/wearingmanage',
-      component: Topsubmenu,
-      children:[{
-          path: '/wearingmanage/newwearing',
-          name: 'Newwearing',
-          component: () => import('@/views/wearing/newwearing.vue'),
-        }
-      ]
+      path: '/commodymanage/commodymanage',
+      name: 'Commodymanage',
+      component: () => import('@/views/commody/commodymanage.vue'),
     },
     {
-      path: '/articlemanage',
-      component: Topsubmenu,
-      children:[{
-          path: '/articlemanage/newarticle',
-          name: 'Newarticle',
-          component: () => import('@/views/article/newarticle.vue'),
-        }
-      ]
+      path: '/commodymanage/newcommody',
+      name: 'Newcommody',
+      component: () => import('@/views/commody/newcommody.vue'),
     },
     {
-      path: '/settings',
+      path: '/commodymanage/commodydetail',
+      name: 'Commodydetail',
+      component: () => import('@/views/commody/commodydetail.vue'),
+    },
+    {
+      path: '/wearingmanage/wearingmanage',
+      name: 'Wearingmanage',
+      component: () => import('@/views/wearing/wearingmanage.vue'),
+    },
+    {
+      path: '/wearingmanage/newwearing',
+      name: 'Newwearing',
+      component: () => import('@/views/wearing/newwearing.vue'),
+    },
+    {
+      path: '/articlemanage/articlemanage',
+      name: 'Articlemanage',
+      component: () => import('@/views/article/articlemanage.vue'),
+    },
+    {
+      path: '/articlemanage/newarticle',
+      name: 'Newarticle',
+      component: () => import('@/views/article/newarticle.vue'),
+    },
+    {
+      path: '/settings/settings',
       name: 'Settings',
-      component: () => import('@/views/settings')
+      component: () => import('@/views/settings/settings.vue')
+    },
+    {
+      path: '/settings/profile',
+      name: 'Profile',
+      component: () => import('@/views/settings/profile.vue')
+    },
+    {
+      path: '/settings/newuser',
+      name: 'Newuser',
+      component: () => import('@/views/settings/newuser.vue')
+    },
+    {
+      path: '/settings/permission',
+      name: 'Permission',
+      component: () => import('@/views/settings/permission.vue')
     },
   ]
 }]
 
 const createRouter = () => new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

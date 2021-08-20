@@ -1,5 +1,6 @@
 <template>
 <div>
+  <topsubmenu></topsubmenu>
 
   <el-card class="settings">
     <h2>系统参数设置</h2>
@@ -41,11 +42,19 @@
 
 <script>
 import { getInfo, postProfile } from "@/api/user";
+import Topsubmenu from '@/layout/Topsubmenu.vue'
+
 export default {
   name: "Profile",
+
+  components:{
+    Topsubmenu
+  },
+
   created() {
     this.getUserinfo();
   },
+
   methods: {
     async getUserinfo() {
       const response = await getInfo();

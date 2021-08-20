@@ -1,15 +1,15 @@
 <template>
   <el-container>
-    <el-aside width="200px">
+    <el-aside width="200px" v-if="OpenSidebar">
       <h1><span>VUE STARTER</span> 后台管理系统模板</h1>
       <navbar />
     </el-aside>
     <el-container>
-      <el-header style="height: 110px;">
-        <topbar />
+      <el-header >
+        <topbar v-model="OpenSidebar"/>
       </el-header>
       <el-main>
-        <router-view />
+        <router-view/>
       </el-main>
     </el-container>
   </el-container>
@@ -24,6 +24,11 @@ export default {
     Navbar,
     Topbar,
   },
+  data(){
+    return{
+      OpenSidebar:true
+    }
+  }
 };
 </script>
 
